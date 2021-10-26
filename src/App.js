@@ -1,6 +1,5 @@
-import react from "react";
-import React, { useState } from "react";
-import './App.css';
+import React from "react";
+import { Button } from "./Components/Button.style";
 
 function App() {
   //2 variabel function
@@ -11,7 +10,7 @@ function App() {
 
   //useEffect takes an arrayfunction 
   //it will run as soon as the component is rendered
-  react.useEffect(() => {
+  React.useEffect(() => {
     //the logig everytime the timer is on and when it is off
     let interval = null;
 
@@ -26,6 +25,8 @@ function App() {
     }
     return ()  => clearInterval(interval)
   }, [timerOn]) // it will run every time the time changes
+
+  
   return (
     <div className="App">
     <div>
@@ -33,8 +34,8 @@ function App() {
       <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
       <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
     </div>
-    {!timerOn && time == 0 && (
-      <button onClick={()=> setTimeOn(true)}>Start</button>
+    {!timerOn && time === 0 && (
+      <Button onClick={()=> setTimeOn(true)}>Start</Button>
     )}
     {timerOn &&(
        <button onClick={()=> setTimeOn(false)}>Stop</button>
