@@ -1,17 +1,14 @@
 import React from "react";
-import { Button } from "./Components/Button.style";
 
 function App() {
-  //2 variabel function
-  //time track second of time 
-  //setTime to set the time
+
   const [time, setTime] = React.useState(0) //0 default value
   const [timerOn, setTimeOn] = React.useState(false)
 
   //useEffect takes an arrayfunction 
   //it will run as soon as the component is rendered
   React.useEffect(() => {
-    //the logig everytime the timer is on and when it is off
+
     let interval = null;
 
     //if we turn it on 
@@ -35,7 +32,7 @@ function App() {
       <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
     </div>
     {!timerOn && time === 0 && (
-      <Button onClick={()=> setTimeOn(true)}>Start</Button>
+      <button onClick={()=> setTimeOn(true)}>Start</button>
     )}
     {timerOn &&(
        <button onClick={()=> setTimeOn(false)}>Stop</button>
