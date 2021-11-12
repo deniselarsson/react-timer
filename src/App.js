@@ -10,7 +10,6 @@ function App() {
 
     let interval = null;
 
-
     if (timerOn){
       interval = setInterval(()=>{
         setTime(prevTime => prevTime + 10) 
@@ -38,3 +37,4 @@ function App() {
 }
 
 export default App;
+
