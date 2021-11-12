@@ -3,34 +3,24 @@ import './App.css';
 
 function App() {
 
-  //variabel time som vi kan tracka tiden
-  const [time, setTime] = React.useState(0) //0 default value
+  const [time, setTime] = React.useState(0) 
   const [timerOn, setTimeOn] = React.useState(false)
 
-  //useEffect takes an arrayfunction 
-  //it will run as soon as the component is rendered
   React.useEffect(() => {
 
     let interval = null;
 
-    //if we turn it on 
+
     if (timerOn){
       interval = setInterval(()=>{
         setTime(prevTime => prevTime + 10) 
-      },10) //1000 är 1 sek, 100 är 0.1sek, 10 är 0.01 sek
-    //else when we turn it off
+      },10) 
     }else{
       clearInterval(interval)
     }
     return ()  => clearInterval(interval)
-  }, [timerOn]) // it will run every time the time changes in an array
+  }, [timerOn]) 
 
-  //slice -2 gör att vi bara har 2 siffror 
-  //rad 36, 1000millisekund är 1 sekund, 60 sek i 1min
-  //rad 35, 60000millisekund är 1 min, 60 sek i 1min
-  //math.floor avrunda till heltal
-
-  
   return (
     <div className="App">
       <h1>Stop Watch</h1>
