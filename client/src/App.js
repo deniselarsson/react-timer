@@ -2,7 +2,7 @@ import './App.css';
 import React from "react";
 import Header from "./component/Header";
 import Timer from "./component/Timer";
-import InputField from './component/InputField';
+import InputField from './component/UserInputField';
 
 function App() {
 
