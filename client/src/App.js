@@ -3,6 +3,8 @@ import React from "react";
 import Header from "./component/Header";
 import Timer from "./component/Timer";
 import InputField from './component/UserInputField';
+import UserForm from './component/UserForm';
+import UserInputField from './component/UserInputField';
 
 function App() {
 
@@ -10,7 +12,7 @@ function App() {
     <div className="App">
       <Header/>
       <Timer/>
-      <InputField/>
+      <UserInputField/>
     </div>
   );
 }
